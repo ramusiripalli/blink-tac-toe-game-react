@@ -67,7 +67,7 @@ const GameContainer = () => {
         </div>
 
         {/* Score display */}
-        <div className="bg-transparent border border-[#00f0ff] py-3 px-6 text-white">
+        <div className="bg-transparent border-t border-[#00f0ff] py-3 px-6 text-white">
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-3">
               <span className="text-xl text-[#00f0ff] font-semibold">Player 1 :</span>
