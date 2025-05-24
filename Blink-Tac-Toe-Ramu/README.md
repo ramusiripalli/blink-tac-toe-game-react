@@ -60,19 +60,23 @@ Welcome to **Blink Tac Toe** – a 2-player emoji twist on the classic Tic Tac T
 
 ### 🎮 Game Category Selection
 ![Game](./screenshots/2.png)
+
+### 🎮 second player category hidden
 ![Game](./screenshots/3.png)
 
-### 🎮 Game Board 3 * 3 Grid Based on player colour
+### 🎮 Game Board 3 * 3 Grid, Player 1 cyan colour
 ![Game](./screenshots/4.png)
+
+### 🎮 Game Board 3 * 3 Grid, player 2 pink colour
 ![Game](./screenshots/5.png)
 
-### 🧾 Game Over , Winners Display with Confetti
+### 🧾 Game Over, Winners Display with Confetti
 ![Winner](./screenshots/6.png)
 
-### 🧾 Help Rules 
+### 🧾 Help Rules, Help Modal we have close button also
 ![Help](./screenshots/7.png)
 
-### 🏆  Scoreboard
+### 🏆  Scoreboard , Transparent and hovering Effect UI
 ![Score](./screenshots/8.png)
 
 ### 🏆  Light Theme Indian Flag Colour
@@ -106,7 +110,8 @@ npm run dev
 
 📈 Game History / Rounds — Track past wins and enable multi-round scorekeeping.
 
-👨‍💻 Developed By
-**Ramu Siripalli**
-MERN Stack Developer | React Enthusiast
+
+### 👨‍💻 Developed By
+### **Ramu Siripalli**
+###MERN Stack Developer | React Enthusiast
 
