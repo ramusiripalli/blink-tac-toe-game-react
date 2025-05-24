@@ -1,3 +1,4 @@
+// src/contexts/GameContext.jsx
 import React, { createContext, useContext, useState } from 'react';
 import { emojiCategories } from '../data/emojiCategories';
 
@@ -22,7 +23,6 @@ const GameContextProvider = ({ children }) => {
   const getRandomEmoji = (playerId) => {
     const player = players[playerId - 1];
     if (!player.category) return '';
-    
     const randomIndex = Math.floor(Math.random() * player.category.emojis.length);
     return player.category.emojis[randomIndex];
   };
@@ -39,15 +39,13 @@ const GameContextProvider = ({ children }) => {
       };
       return newPlayers;
     });
-
-    if (
-      (playerId === 1 && players[1].category) ||
-      (playerId === 2 && players[0].category)
-    ) {
-      setPhase('playing');
-      setAvailableEmoji(getRandomEmoji(1));
-    }
   };
+
+  const startGame = () => {
+    setPhase('playing');
+    setAvailableEmoji(getRandomEmoji(1));
+  };
+
   const placeEmoji = (index) => {
     if (phase !== 'playing' || board[index].emoji !== null) return;
 
@@ -72,28 +70,27 @@ const GameContextProvider = ({ children }) => {
     setPlayers(prev => {
       const newPlayers = [...prev];
       const currentPlayerIndex = currentPlayerId - 1;
-      
+
       newPlayers[currentPlayerIndex] = {
         ...newPlayers[currentPlayerIndex],
-        placedEmojis: [
-          ...playerEmojis,
-          { index, emoji: availableEmoji },
-        ],
+        placedEmojis: [...playerEmojis, { index, emoji: availableEmoji }],
       };
-      
+
       return newPlayers;
     });
 
-    const gameOver = checkWinCondition(newBoard, currentPlayerId);
-    
-    if (gameOver) {
+    const gameWon = checkWinCondition(newBoard, currentPlayerId);
+
+    if (gameWon) {
       setPlayers(prev => {
         const newPlayers = [...prev];
         newPlayers[currentPlayerId - 1].score += 1;
         return newPlayers;
       });
-      
-      setPhase('game-over');
+
+      setTimeout(() => {
+        setPhase('game-over');
+      }, 2000);
     } else {
       const nextPlayerId = currentPlayerId === 1 ? 2 : 1;
       setCurrentPlayerId(nextPlayerId);
@@ -103,9 +100,14 @@ const GameContextProvider = ({ children }) => {
 
   const checkWinCondition = (boardState, playerId) => {
     const winPatterns = [
-      [0, 1, 2], [3, 4, 5], [6, 7, 8],
-      [0, 3, 6], [1, 4, 7], [2, 5, 8],
-      [0, 4, 8], [2, 4, 6]
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
     ];
 
     for (const pattern of winPatterns) {
@@ -119,10 +121,9 @@ const GameContextProvider = ({ children }) => {
       }
     }
 
+    setWinningCombination(null);
     return false;
   };
-
-  const checkGameOver = () => phase === 'game-over';
 
   const resetGame = (keepCategories = false) => {
     setBoard(Array(9).fill({ emoji: null, playerId: null }));
@@ -132,7 +133,7 @@ const GameContextProvider = ({ children }) => {
     if (keepCategories && players[0].category && players[1].category) {
       setPhase('playing');
       setAvailableEmoji(getRandomEmoji(1));
-      
+
       setPlayers(prev => {
         const newPlayers = [...prev];
         newPlayers[0] = { ...newPlayers[0], placedEmojis: [] };
@@ -157,6 +158,8 @@ const GameContextProvider = ({ children }) => {
     });
   };
 
+  const checkGameOver = () => phase === 'game-over';
+
   const value = {
     phase,
     setPhase,
@@ -172,6 +175,7 @@ const GameContextProvider = ({ children }) => {
     resetScores,
     getRandomEmoji,
     checkGameOver,
+    startGame, // ✅ added here
   };
 
   return <GameContext.Provider value={value}>{children}</GameContext.Provider>;
