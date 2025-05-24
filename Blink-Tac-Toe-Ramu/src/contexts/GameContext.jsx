@@ -48,7 +48,27 @@ const GameContextProvider = ({ children }) => {
       setAvailableEmoji(getRandomEmoji(1));
     }
   };
+  const placeEmoji = (index) => {
+    if (phase !== 'playing' || board[index].emoji !== null) return;
 
+    let newBoard = [...board];
+    const playerEmojis = [...currentPlayer.placedEmojis];
+
+    if (playerEmojis.length >= 3) {
+      const oldestEmoji = playerEmojis.shift();
+      if (oldestEmoji && index !== oldestEmoji.index) {
+        newBoard[oldestEmoji.index] = { emoji: null, playerId: null };
+      } else {
+        return;
+      }
+    }
+
+    newBoard[index] = {
+      emoji: availableEmoji,
+      playerId: currentPlayerId,
+    };
+
+    setBoard(newBoard);
     setPlayers(prev => {
       const newPlayers = [...prev];
       const currentPlayerIndex = currentPlayerId - 1;
