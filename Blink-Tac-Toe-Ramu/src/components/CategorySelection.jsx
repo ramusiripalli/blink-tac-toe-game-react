@@ -31,7 +31,7 @@ const CategorySelection = () => {
         <div className="flex justify-center pt-4">
           <button
             onClick={startGame}
-            className="bg-gradient-to-r from-[#00f0ff] to-[#ff00c3] text-white font-bold py-2 px-6 rounded-full shadow-lg hover:shadow-xl transition-all text-lg sm:text-xl"
+            className="bg-gradient-to-r from-[#00f0ff] to-[#ff00c3] text-white font-bold py-2 px-6 rounded-2xl shadow-lg hover:shadow-xl transition-all text-lg sm:text-xl"
           >
             Start Game
           </button>
