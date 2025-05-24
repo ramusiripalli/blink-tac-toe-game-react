@@ -11,8 +11,8 @@ const GameBoard = () => {
       <div
         className={`rounded-xl p-6 text-center shadow-xl border-4 transition-all duration-300 ${
           currentPlayer.id === 1
-            ? 'bg-gradient-to-br from-black to-cyan-600 text-white border-cyan-400 shadow-cyan-500/40'
-            : 'bg-gradient-to-br from-pink-500 to-purple-600 text-white border-pink-400 shadow-pink-500/40'
+            ? 'bg-[#091a2e] to-black text-white border-cyan-400 shadow-cyan-500/80'
+            : 'bg-[#091a2e] text-white border-[#ff00c3] shadow-[#ff00c3]/80'
         }`}
       >
         <h2 className="text-xl font-bold mb-3 animate-pulse">
@@ -22,7 +22,7 @@ const GameBoard = () => {
         <div className="flex items-center justify-center gap-2 mb-4">
           <p className="text-white/90">Your emoji:</p>
           <motion.span
-            className="text-4xl"
+            className="text-4xl animate-spin"
             initial={{ scale: 0, rotate: -180 }}
             animate={{ scale: 1, rotate: 0 }}
             key={availableEmoji}
@@ -44,7 +44,7 @@ const GameBoard = () => {
               disabled={cell.emoji !== null}
               className={`relative flex items-center justify-center rounded-xl text-4xl transition-all duration-300
                 ${cell.emoji === null
-                  ? 'bg-slate-100 dark:bg-white hover:bg-slate-200 dark:hover:bg-slate-500 cursor-pointer shadow-inner'
+                  ? 'bg-slate-100 dark:bg-white hover:bg-slate-300 dark:hover:bg-slate-500 cursor-pointer shadow-inner'
                   : 'bg-white/80 cursor-default'}`}
               whileHover={{ scale: cell.emoji === null ? 1.05 : 1 }}
               whileTap={{ scale: cell.emoji === null ? 0.95 : 1 }}
@@ -92,10 +92,10 @@ const GameBoard = () => {
           return (
             <motion.div
               key={playerId}
-              className={`p-4 rounded-xl text-center backdrop-blur-md bg-[#0a2b51] ${
+              className={`p-4 rounded-xl text-center backdrop-blur-md bg-[#0c2541] ${
                 isActive
-                  ? `ring-2 ring-offset-2 ${playerData.glow} animate-glow border border-white/10`
-                  : 'ring-0 border border-white/5'
+                  ? `bg-gradient-to-r ${playerData.gradient} text-white ring-2 ring-offset-2 ${playerData.glow} border`
+                  : 'bg-[#0a2b51] text-white ring-0 border border-cyan-500'
               } transition-all duration-300`}
               whileHover={isActive ? { scale: 1.02 } : {}}
               animate={isActive ? { y: [0, -3, 0] } : {}}
