@@ -50,7 +50,7 @@ const HelpModal = ({ onClose }) => {
                 <div className="bg-primary-50 dark:bg-primary-900/30 p-4 rounded-lg">
                   <h4 className="font-semibold mb-2 text-primary-700 dark:text-primary-300">Player 1's Turn</h4>
                   <div className="bg-blue-500/20 p-3 rounded-lg animate-pulse">
-                    Entire screen tints blue
+                    Entire screen tints cyan(blue)
                   </div>
                 </div>
                 <div className="bg-accent-50 dark:bg-accent-900/30 p-4 rounded-lg">
