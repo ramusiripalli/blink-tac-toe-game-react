@@ -71,10 +71,10 @@ const GameContainer = () => {
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-3">
               <span className="text-xl text-[#00f0ff] font-semibold">Player 1 :</span>
-              <span className="text-xl text-[#ff00c3] font-bold">{scores[0]}</span>
+              <span className="text-xl text-[#00f0ff] font-bold">{scores[0]}</span>
             </div>
             <div className="flex items-center space-x-3">
-              <span className="text-xl text-[#00f0ff] font-semibold">Player 2 :</span>
+              <span className="text-xl text-[#ff00c3] font-semibold">Player 2 :</span>
               <span className="text-xl text-[#ff00c3] font-bold">{scores[1]}</span>
             </div>
           </div>
