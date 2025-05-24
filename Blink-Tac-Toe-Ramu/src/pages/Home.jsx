@@ -9,14 +9,14 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white flex items-center justify-center px-6 overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white flex items-center justify-center px-6 overflow-hidden py-6">
       {/* Outer Wrapper with Rotating Arrow Effect */}
       <div className="relative max-w-3xl w-full text-center p-8 rounded-2xl border border-cyan-500 bg-gradient-to-br from-black via-gray-900 to-black shadow-[0_0_30px_rgba(0,255,255,0.5)]">
 
         {/* Rotating Arrow */}
-        <div className="absolute inset-0 pointer-events-none z-0">
+        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
           <div className="w-full h-full animate-spin-slow origin-center">
-            <div className="absolute top-1 left-1/2 transform -translate-x-1/2 text-[#ff00c3] text-2xl drop-shadow-md">
+            <div className="absolute top-1 left-1/2 transform -translate-x-1/2 text-[#ff00c3] drop-shadow-md text-xl sm:text-2xl md:text-2xl">
               ➤ 
             </div>
           </div>
@@ -35,7 +35,7 @@ export default function Home() {
             animate={{ scale: 1 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
           >
-            Blink Tac Toe
+            XOXO
           </motion.h1>
 
           <motion.p
@@ -44,7 +44,7 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
           >
-            Welcome to <span className="text-cyan-400 font-semibold">Blink Tac Toe</span> — a fun twist on the classic Tic Tac Toe game where emojis replace Xs and Os, and your oldest moves vanish as you play!
+            Welcome to <span className="text-cyan-400 font-semibold">XOXO </span> — a fun twist on the classic Tic Tac Toe game where emojis replace Xs and Os, and your oldest moves vanish as you play!
           </motion.p>
 
           <motion.div
