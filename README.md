@@ -1,51 +1,112 @@
-# blink-tac-toe-game-react
-A playful twist on the classic Tic Tac Toe game featuring emojis, vanishing moves, and dynamic gameplay.
+# 🎮 Blink Tac Toe
 
-# 🟡 Blink Tac Toe 🎮
+Welcome to **Blink Tac Toe** – a 2-player emoji twist on the classic Tic Tac Toe game with a *vanishing emoji* rule! Built for the Darban.ai Frontend Developer Challenge.
 
-**Blink Tac Toe** is a two-player emoji-based game inspired by Tic Tac Toe, developed as part of a frontend challenge by [Darban.ai](https://darban.ai). This fun twist introduces a vanishing rule and playful emoji categories, emphasizing creative UI logic and clean code.
+---
+
+## 🛠 Tech Stack
+
+- ⚛️ **React (Vite)**
+- 💨 **Tailwind CSS** for styling
+- 🎞 **Framer Motion, keyframes** for animations and transitions
+- 🌐 **Deployed on** [Vercel](https://vercel.com)
 
 ---
 
 ## ✨ Features
 
-- 🎮 Emoji categories instead of Xs and Os
-- ⏳ **Vanishing Rule**: Only 3 emojis per player on the board at a time
-- 🔁 **FIFO Logic**: The oldest emoji disappears when a new one is placed
-- 🎯 Win detection (horizontal, vertical, diagonal)
-- 🔄 Replay support
-- 📱 Responsive for desktop & mobile
-- 🆘 Built-in help section for first-time players
+- 🔁 **Vanishing Rule**: Each player has only 3 active emojis. The oldest disappears (FIFO).
+- 🎨 **Player Color Identity**:
+  - **Player 1** – `Cyan` (`#00f0ff`)
+  - **Player 2** – `Pink` (`#ff00c3`)
+- 🤖 **Emoji Categories**:
+  - Animals: 🐶 🐱 🐵 🐰
+  - Food: 🍕 🍟 🍔 🍩
+  - Sports: ⚽️ 🏀 🏈 🎾
+  - Custom categories supported!
+- 🕹 Turn-based gameplay with visual turn indication
+- 🧾 **Help modal** for first-time users
+- 🏆 **Scoreboard**, Play Again, and Game Over screen
+- 📱 Fully responsive (desktop & mobile)
+- ⚡ Smooth transitions and animations
 
 ---
 
-## 🚀 Tech Stack
+## 🔍 Game Logic
 
-- **Framework**: React.js (with Hooks)
-- **Styling**: CSS / Tailwind (or your choice)
-- **Deployment**: [Vercel](https://vercel.com), [Netlify](https://netlify.com) or GitHub Pages
+### ➤ Vanishing Emoji Logic
+- Each player can place only **3 emojis** on the board at once.
+- If a player tries to place a 4th emoji:
+  - Their **oldest** emoji disappears (FIFO).
+  - That cell **becomes reusable**, but not immediately in the same move.
 
----
-
-## 🎨 Emoji Categories
-
-Players choose from fun emoji themes like:
-
-- 🐶 Animals: `🐶 🐱 🐵 🐰`
-- 🍕 Food: `🍕 🍟 🍔 🍩`
-- ⚽ Sports: `⚽ 🏀 🏈 🎾`
-
-*(You can also define your own!)*
+### ➤ Win Conditions
+- Line of **3 emojis** (horizontal, vertical, or diagonal)
+- All 3 must belong to the **same player/category**
+- No draws are possible — board can’t fill fully
 
 ---
 
-## 🧠 Vanishing Logic
+## 🧪 Live Demo
 
-When a player places their **4th emoji**, the **oldest one** disappears automatically using FIFO logic. The cell it was in becomes **reusable**, but the **new emoji cannot go on the same spot** immediately.
+👉 [Live Link (Vercel)](https://your-vercel-link.com)
 
 ---
 
-## 📦 How to Run Locally
+## 📸 UI Screenshots
 
-```bash
-git clone
+### 🏠 Home Page
+![Home](./screenshots/1.png)
+
+### 🎮 Game Category Selection
+![Game](./screenshots/2.png)
+![Game](./screenshots/3.png)
+
+### 🎮 Game Board 3 * 3 Grid Based on player colour
+![Game](./screenshots/4.png)
+![Game](./screenshots/5.png)
+
+### 🧾 Game Over , Winners Display with Confetti
+![Winner](./screenshots/6.png)
+
+### 🧾 Help Rules 
+![Help](./screenshots/7.png)
+
+### 🏆  Scoreboard
+![Score](./screenshots/8.png)
+
+### 🏆  Light Theme Indian Flag Colour
+![Theme](./screenshots/9.png)
+
+### 🏆  Mobile Phone Responsivness
+![Mobile](./screenshots/10.png)
+![Mobile](./screenshots/10.png)
+
+
+### 🚀 Setup Instructions
+
+# Clone the repo
+git clone https://github.com/your-username/blink-tac-toe.git
+cd blink-tac-toe
+
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
+
+
+**🤔 Improvements with More Time**
+
+🔊 Sound Effects — Add fun feedback for emoji placement and victory.
+
+🧠 AI Mode — Challenge yourself against an AI player.
+
+🌈 Theme Toggle — Auto switch between light/dark mode based on system preferences.
+
+📈 Game History / Rounds — Track past wins and enable multi-round scorekeeping.
+
+👨‍💻 Developed By
+**Ramu Siripalli**
+MERN Stack Developer | React Enthusiast
+
