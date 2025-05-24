@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white flex items-center justify-center px-6 overflow-hidden">
       {/* Outer Wrapper with Rotating Arrow Effect */}
-      <div className="relative max-w-3xl w-full text-center p-8 rounded-2xl border border-cyan-500 bg-gradient-to-br from-black via-gray-900 to-black shadow-[0_0_30px_rgba(0,255,255,0.3)]">
+      <div className="relative max-w-3xl w-full text-center p-8 rounded-2xl border border-cyan-500 bg-gradient-to-br from-black via-gray-900 to-black shadow-[0_0_30px_rgba(0,255,255,0.5)]">
 
         {/* Rotating Arrow */}
         <div className="absolute inset-0 pointer-events-none z-0">
