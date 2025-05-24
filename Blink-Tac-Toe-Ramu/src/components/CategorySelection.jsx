@@ -61,7 +61,7 @@ const PlayerCategorySelector = ({ player, otherPlayerCategory, onSelect }) => {
               className={`
                 p-3 sm:p-4 rounded-xl border-2 text-center transition-all duration-200
                 ${isDisabled
-                  ? 'opacity-40 cursor-not-allowed bg-[#ff00c3] border-[#f7f9fa]'
+                  ? 'opacity-40 cursor-not-allowed bg-[#848484] border-[#f7f9fa]'
                   : isSelected
                   ? 'bg-gradient-to-br from-cyan-500/30 to-indigo-500/30 border-[#ff00c3] drop-shadow-[0_0_12px_rgba(6,182,212,0.8)]'
                   : 'bg-[#110f2a] border-[#00f0ff] hover:border-cyan-300 hover:drop-shadow-[0_0_10px_rgba(34,211,238,0.5)]'}

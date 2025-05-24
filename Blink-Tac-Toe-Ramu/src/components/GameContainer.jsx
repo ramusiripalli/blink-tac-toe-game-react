@@ -64,14 +64,14 @@ const GameContainer = () => {
                 <HelpCircle size={20} className="sm:size-6" />
               </button>
 
-              <button
+              {/* <button
                 onClick={toggleTheme}
                 title="Change Theme"
                 className="p-1 sm:p-2 rounded-full hover:bg-[#541453] transition-colors"
                 aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
               >
                 {theme === 'light' ? <Moon size={20} className="sm:size-6" /> : <Sun size={20} className="sm:size-6" />}
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
