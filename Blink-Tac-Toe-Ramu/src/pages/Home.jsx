@@ -16,7 +16,7 @@ export default function Home() {
         {/* Rotating Arrow */}
         <div className="absolute inset-0 pointer-events-none z-0">
           <div className="w-full h-full animate-spin-slow origin-center">
-            <div className="absolute top-1 left-1/2 transform -translate-x-1/2 text-pink-400 text-2xl drop-shadow-md">
+            <div className="absolute top-1 left-1/2 transform -translate-x-1/2 text-[#ff00c3] text-2xl drop-shadow-md">
               ➤ 
             </div>
           </div>
@@ -53,20 +53,21 @@ export default function Home() {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.8 }}
           >
-            <h2 className="text-2xl font-bold text-pink-400 mb-4 drop-shadow-md">
+            <h2 className="text-2xl font-bold text-[#ff00c3] mb-4 drop-shadow-md">
               Game Rules 🧾
             </h2>
-            <ul className="text-left space-y-2 text-sm md:text-base text-gray-200 leading-relaxed">
-              <li>🎮 Choose your emoji category before the game starts.</li>
-              <li>⏳ Only 3 emojis per player can be active at once.</li>
-              <li>🔁 Your oldest emoji vanishes when you place a new one.</li>
-              <li>🏆 Form a line of 3 emojis to win (horizontal, vertical, or diagonal).</li>
-            </ul>
+           <ul className="text-left space-y-2 text-sm md:text-base text-gray-200 leading-relaxed">
+             <li>🎮 Choose your emoji category before the game starts.</li>
+             <li>⏳ Only 3 emojis per player can be active at once.</li>
+             <li>🔁 Your oldest emoji vanishes when you place a new one.</li>
+             <li>🏆 Form a line of 3 emojis to win (horizontal, vertical, or diagonal).</li>
+             <li>🎨 <span className="text-[#00f0ff] font-semibold">Player 1</span> uses <span className="text-[#00f0ff] font-semibold">cyan</span> & <span className="text-[#ff00c3] font-semibold">Player 2</span> uses <span className="text-[#ff00c3] font-semibold">pink</span>.</li>
+          </ul>
           </motion.div>
 
           <motion.button
             onClick={handleStart}
-            className="mt-8 px-10 py-3 bg-gradient-to-br from-pink-500 to-cyan-400 text-white rounded-full shadow-[0_0_20px_rgba(0,255,255,0.3)] hover:scale-105 transform transition duration-300 ease-in-out hover:shadow-[0_0_25px_rgba(255,0,255,0.6)]"
+            className="mt-8 px-10 py-3 bg-gradient-to-l from-[#ff00c3] to-[#00f0ff] text-white rounded-full shadow-[0_0_20px_rgba(0,255,255,0.6)] hover:scale-105 transform transition duration-300 ease-in-out hover:shadow-[0_0_25px_rgba(255,0,255,0.8)]"
             whileTap={{ scale: 0.95 }}
           >
             🚀 Start Game

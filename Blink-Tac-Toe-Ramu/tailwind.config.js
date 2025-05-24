@@ -4,9 +4,6 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
-       animation: {
-        'spin-slow': 'spin 6s linear infinite',
-      },
       colors: {
         primary: {
           50: '#f0f9ff',
@@ -42,7 +39,8 @@ export default {
         },
       },
       animation: {
-        'spin-slow': 'spin 3s linear infinite',
+        'spin-slow': 'spin 6s linear infinite',
+        'glow': 'glow 2s ease-in-out infinite',
         'bounce-short': 'bounce 1s ease-in-out 2',
         'pulse-once': 'pulse 1s ease-in-out 1',
         'wiggle': 'wiggle 1s ease-in-out infinite',
@@ -78,6 +76,10 @@ export default {
           '50%': { backgroundPosition: '100% 50%' },
           '100%': { backgroundPosition: '0% 50%' },
         },
+         glow: {
+           '0%, 100%': { boxShadow: '0 0 10px 4px rgba(255, 255, 255, 0.3)' },
+            '50%': { boxShadow: '0 0 20px 6px rgba(255, 255, 255, 0.5)' },
+       },
       },
       backgroundSize: {
         '300%': '300%',

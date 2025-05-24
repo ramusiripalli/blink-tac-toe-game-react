@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { Moon, Sun, HelpCircle, Trophy } from 'lucide-react';
+import { Moon, Sun, HelpCircle, Trophy, Home } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext.jsx';
 import { useGame } from '../contexts/GameContext.jsx';
+import { useNavigate } from 'react-router-dom';
 import CategorySelection from './CategorySelection.jsx';
 import GameBoard from './GameBoard.jsx';
 import GameOver from './GameOver.jsx';
 import HelpModal from './HelpModal.jsx';
 import ScoreBoard from './ScoreBoard.jsx';
 
+
 const GameContainer = () => {
+  const navigate = useNavigate();
   const { theme, toggleTheme } = useTheme();
   const { phase, scores, currentPlayer } = useGame();
   const [showHelp, setShowHelp] = useState(() => {
@@ -37,27 +40,35 @@ const GameContainer = () => {
         {/* Header */}
         <div className="p-8 text-[#00f0ff]">
           <div className="flex justify-between items-center">
-            <h1 className="text-3xl font-bold hover:text-[#ff00c3] transition-colors">
+            <h1 className="text-3xl font-bold hover:text-[#ff00c3] transition-colors  animate-pulse">
               Blink Tac Toe
             </h1>
             <div className="flex items-center space-x-3">
+              <button
+                 onClick={() => navigate("/")}
+                 className="p-2 rounded-full hover:bg-[#00f0ff] text-white transition-all bg-gradient-to-br from-cyan-500 to-blue-500 hover:shadow-[0_0_12px_rgba(0,255,255,0.6)] animate-pulse"
+                  aria-label="Go to Home" title='Go to Home'
+               >
+                   <Home size={24} />
+               </button>
+                
               <button 
                 onClick={() => setShowScores(true)}
-                className="p-2 rounded-full hover:bg-[#ff00c3] transition-colors"
-                aria-label="Show scores"
+                className="p-2 rounded-full hover:bg-[#541453] transition-colors"
+                aria-label="Show scores" title="Show scores"
               >
                 <Trophy size={24} />
               </button>
               <button 
                 onClick={() => setShowHelp(true)}
-                className="p-2 rounded-full hover:bg-[#ff00c3] transition-colors"
-                aria-label="Show help"
+                className="p-2 rounded-full hover:bg-[#541453] transition-colors"
+                aria-label="Show help" title="Show help"
               >
                 <HelpCircle size={24} />
               </button>
               <button 
-                onClick={toggleTheme}
-                className="p-2 rounded-full hover:bg-[#ff00c3] transition-colors"
+                onClick={toggleTheme} title='change theme'
+                className="p-2 rounded-full hover:bg-[#541453] transition-colors"
                 aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
               >
                 {theme === 'light' ? <Moon size={24} /> : <Sun size={24} />}
